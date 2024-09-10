@@ -43,7 +43,7 @@ class Branch
     }
     public function getBranches()
     {
-        return $this->pdo->query("SELECT * FROM branch")->fetchAll(PDO::FETCH_ASSOC);
+        return $this->pdo->query("SELECT * FROM branch")->fetchAll();
     }
 
     public function deleteBranch(int $id): bool

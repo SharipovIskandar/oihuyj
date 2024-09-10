@@ -4,6 +4,8 @@ declare(strict_types=1);
 
 namespace Controller;
 
+use App\Branch;
+
 class AdController
 {
     public function show(int $id): void
@@ -16,7 +18,7 @@ class AdController
             $ad->image = "../assets/images/ads/$ad->image";
         }
 
-        loadView('single-ad', ['ad' => $ad]);
+        loadView('single-ad', ['ad' => $ad], false);
     }
 
     public function create(): void
@@ -67,6 +69,14 @@ class AdController
     }
 
     public function update(int $id): void{
-        loadView('dashboard/create-ad', ['ad' => (new \App\Ads())->getAd($id)]);
+        loadView('dashboard/create-ad', ['ad' => (new \App\Ads())->getAd($id)],  false);
+    }
+
+    public function search()
+    {
+        $searchPhrase = $_REQUEST['search-phrase'];
+        $ads = (new \App\Ads())->search($searchPhrase);
+        $branches = (new Branch())->getBranches();
+        loadView('home', ['ads' => $ads, 'branches' => $branches], false);
     }
 }

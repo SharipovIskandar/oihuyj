@@ -7,20 +7,20 @@ loadPartials('header', loadFromPublic: false);
 ?>
 <div class="page-wrapper toggled">
     <!-- Start Page Content -->
+    <?php
+    loadPartials('sidebar', loadFromPublic: false);
+    ?>
     <main class="page-content bg-gray-50 dark:bg-slate-800">
         <!-- Top Header -->
-        <?php
-        loadPartials('sidebar', loadFromPublic: false);
-        ?>
         <div class="top-header">
             <div class="header-bar flex justify-between">
                 <div class="flex items-center space-x-1">
                     <!-- Logo -->
                     <a href="#" class="xl:hidden block me-2">
-                        <img src="../../assets/images/logo-icon-32.png" class="md:hidden block" alt="">
+                        <img src="/dashboard/assets/images/logo-icon-32.png" class="md:hidden block" alt="">
                         <span class="md:block hidden">
-                                    <img src="../../assets/images/logo-dark.png" class="inline-block dark:hidden" alt="">
-                                    <img src="../../assets/images/logo-light.png" class="hidden dark:inline-block" alt="">
+                                    <img src="/dashboard/assets/images/logo-dark.png" class="inline-block dark:hidden" alt="">
+                                    <img src="/dashboard/assets/images/logo-light.png" class="hidden dark:inline-block" alt="">
                                 </span>
                     </a>
                     <!-- Logo -->
@@ -51,7 +51,7 @@ loadPartials('header', loadFromPublic: false);
                         <button data-dropdown-toggle="dropdown"
                                 class="dropdown-toggle size-8 inline-flex items-center justify-center tracking-wide align-middle duration-500 text-[20px] text-center bg-gray-50 dark:bg-slate-800 hover:bg-gray-100 dark:hover:bg-slate-700 border border-gray-100 dark:border-gray-800 text-slate-900 dark:text-white rounded-md"
                                 type="button">
-                            <img src="../../assets/images/flags/usa.png" class="size-6 rounded-md" alt="">
+                            <img src="/dashboard/assets/images/flags/usa.png" class="size-6 rounded-md" alt="">
                         </button>
                         <!-- Dropdown menu -->
                         <div class="dropdown-menu absolute end-0 m-0 mt-4 z-10 w-36 rounded-md overflow-hidden bg-white dark:bg-slate-900 shadow dark:shadow-gray-700 hidden"
@@ -60,28 +60,28 @@ loadPartials('header', loadFromPublic: false);
                                 <li class="my-1">
                                     <a href=""
                                        class="flex items-center text-[15px] font-medium py-1.5 px-4 dark:text-white/70 hover:text-green-600 dark:hover:text-white"><img
-                                            src="../../assets/images/flags/germany.png"
+                                            src="/dashboard/assets/images/flags/germany.png"
                                             class="size-6 rounded-md me-2 shadow dark:shadow-gray-700" alt="">
                                         German</a>
                                 </li>
                                 <li class="my-1">
                                     <a href=""
                                        class="flex items-center text-[15px] font-medium py-1.5 px-4 dark:text-white/70 hover:text-green-600 dark:hover:text-white"><img
-                                            src="../../assets/images/flags/italy.png"
+                                            src="/dashboard/assets/images/flags/italy.png"
                                             class="size-6 rounded-md me-2 shadow dark:shadow-gray-700" alt="">
                                         Italian</a>
                                 </li>
                                 <li class="my-1">
                                     <a href=""
                                        class="flex items-center text-[15px] font-medium py-1.5 px-4 dark:text-white/70 hover:text-green-600 dark:hover:text-white"><img
-                                            src="../../assets/images/flags/russia.png"
+                                            src="/dashboard/assets/images/flags/russia.png"
                                             class="size-6 rounded-md me-2 shadow dark:shadow-gray-700" alt="">
                                         Russian</a>
                                 </li>
                                 <li class="my-1">
                                     <a href=""
                                        class="flex items-center text-[15px] font-medium py-1.5 px-4 dark:text-white/70 hover:text-green-600 dark:hover:text-white"><img
-                                            src="../../assets/images/flags/spain.png"
+                                            src="/dashboard/assets/images/flags/spain.png"
                                             class="size-6 rounded-md me-2 shadow dark:shadow-gray-700" alt="">
                                         Spanish</a>
                                 </li>
@@ -123,7 +123,7 @@ loadPartials('header', loadFromPublic: false);
                                 <li>
                                     <a href="#!" class="block font-medium py-1.5 px-4">
                                         <div class="flex items-center">
-                                            <img src="../../assets/images/client/04.jpg"
+                                            <img src="/dashboard/assets/images/client/04.jpg"
                                                  class="size-10 rounded-md shadow dark:shadow-gray-700" alt="">
                                             <div class="ms-2">
                                                     <span class="text-[15px] font-medium block"><span
@@ -163,7 +163,7 @@ loadPartials('header', loadFromPublic: false);
                                 <li>
                                     <a href="#!" class="block font-medium py-1.5 px-4">
                                         <div class="flex items-center">
-                                            <img src="../../assets/images/client/05.jpg"
+                                            <img src="../../../../public/assets/images/client/05.jpg"
                                                  class="size-10 rounded-md shadow dark:shadow-gray-700" alt="">
                                             <div class="ms-2">
                                                     <span class="text-[15px] font-medium block"><span
@@ -182,14 +182,14 @@ loadPartials('header', loadFromPublic: false);
                     <li class="dropdown inline-block relative">
                         <button data-dropdown-toggle="dropdown" class="dropdown-toggle items-center" type="button">
                                 <span class="size-8 inline-flex items-center justify-center tracking-wide align-middle duration-500 text-[20px] text-center bg-gray-50 dark:bg-slate-800 hover:bg-gray-100 dark:hover:bg-slate-700 border border-gray-100 dark:border-gray-800 text-slate-900 dark:text-white rounded-md"><img
-                                        src="../../assets/images/client/07.jpg" class="rounded-md" alt=""></span>
+                                            src="../../../../public/assets/images/client/07.jpg" class="rounded-md" alt=""></span>
                         </button>
                         <!-- Dropdown menu -->
                         <div class="dropdown-menu absolute end-0 m-0 mt-4 z-10 w-44 rounded-md overflow-hidden bg-white dark:bg-slate-900 shadow dark:shadow-gray-700 hidden"
                              onclick="event.stopPropagation();">
                             <ul class="py-2 text-start">
                                 <li>
-                                    <a href="profile.html"
+                                    <a href="/profile"
                                        class="block py-1 px-4 dark:text-white/70 hover:text-green-600 dark:hover:text-white"><i
                                             class="mdi mdi-account-outline me-2"></i>Profile</a>
                                 </li>
@@ -241,40 +241,40 @@ loadPartials('header', loadFromPublic: false);
                 </div>
                 <!-- Start Content -->
 
-                <div class="container relative">
                     <div class="container relative">
-                            <div class="grid lg:grid-cols-3 md:grid-cols-2 grid-cols-1 gap-6">
-                            <?php foreach ($branches as $branch) : ?>
-                                    <div class="group rounded-xl bg-white dark:bg-slate-900 shadow hover:shadow-xl dark:hover:shadow-xl dark:shadow-gray-700 dark:hover:shadow-gray-700 overflow-hidden ease-in-out duration-500">
-                                        <div class="relative">
-                                            <div class="absolute top-4 end-4">
-                                                <a href="javascript:void(0)" class="btn btn-icon bg-white dark:bg-slate-900 shadow dark:shadow-gray-700 rounded-full text-slate-100 dark:text-slate-700 focus:text-red-600 dark:focus:text-red-600 hover:text-red-600 dark:hover:text-red-600">
-                                                    <i class="mdi mdi-heart text-[20px]"></i>
-                                                </a>
+                        <div class="container relative">
+                                <div class="grid lg:grid-cols-3 md:grid-cols-2 grid-cols-1 gap-6">
+                                <?php foreach ($branches as $branch) : ?>
+                                        <div class="group rounded-xl bg-white dark:bg-slate-900 shadow hover:shadow-xl dark:hover:shadow-xl dark:shadow-gray-700 dark:hover:shadow-gray-700 overflow-hidden ease-in-out duration-500">
+                                            <div class="relative">
+                                                <div class="absolute top-4 end-4">
+                                                    <a href="javascript:void(0)" class="btn btn-icon bg-white dark:bg-slate-900 shadow dark:shadow-gray-700 rounded-full text-slate-100 dark:text-slate-700 focus:text-red-600 dark:focus:text-red-600 hover:text-red-600 dark:hover:text-red-600">
+                                                        <i class="mdi mdi-heart text-[20px]"></i>
+                                                    </a>
+                                                </div>
+                                            </div>
+                                            <div class="p-6">
+                                                <div class="pb-6">
+                                                    <!-- Filial nomi (text sifatida) -->
+                                                    <span class="text-lg font-medium ease-in-out duration-500">
+                        Filial nomi: <?= $branch['name']; ?>
+                    </span>
+                                                </div>
+                                                <div class="pb-6">
+                                                    <!-- Filial manzili (text sifatida) -->
+                                                    <span class="text-lg font-medium ease-in-out duration-500">
+                        Filial manzili: <?= $branch['address']; ?>
+                    </span>
+                                                </div>
                                             </div>
                                         </div>
-                                        <div class="p-6">
-                                            <div class="pb-6">
-                                                <!-- Filial nomi (text sifatida) -->
-                                                <span class="text-lg font-medium ease-in-out duration-500">
-                    Filial nomi: <?= $branch['name']; ?>
-                </span>
-                                            </div>
-                                            <div class="pb-6">
-                                                <!-- Filial manzili (text sifatida) -->
-                                                <span class="text-lg font-medium ease-in-out duration-500">
-                    Filial manzili: <?= $branch['address']; ?>
-                </span>
-                                            </div>
-                                        </div>
-                                    </div>
-                                <?php endforeach; ?>
+                                    <?php endforeach; ?>
 
-                            </div><!--end grid-->
-                        </div><!--end container-->
-                    <!-- End -->
+                                </div><!--end grid-->
+                            </div><!--end container-->
+                        <!-- End -->
 
-                </div>
+                    </div>
                 <!-- End Content -->
             </div>
         </div><!--end container-->
@@ -296,4 +296,8 @@ loadPartials('header', loadFromPublic: false);
     </main>
     <!--End page-content" -->
 </div>
+
+<?php
+loadPartials('footer', loadFromPublic: false);
+?>
 

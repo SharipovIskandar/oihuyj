@@ -1,7 +1,7 @@
 <nav id="sidebar" class="sidebar-wrapper sidebar-dark">
     <div class="sidebar-content">
         <div class="sidebar-brand">
-            <a href="index.html"><img src="../assets/images/logo-light.png" alt=""></a>
+            <a href="/admin"><img src="/assets/images/logo-light.png" alt=""></a>
         </div>
 
         <ul class="sidebar-menu border-t border-white/10" data-simplebar style="height: calc(100% - 70px);">
@@ -24,7 +24,7 @@
                 <a href="javascript:void(0)"><i class="mdi mdi-account-edit me-2"></i>User Profile</a>
                 <div class="sidebar-submenu">
                     <ul>
-                        <li><a href="profile.html">Profile</a></li>
+                        <li><a href="/profile2">Profile</a></li>
                         <li><a href="profile-setting.html">Profile Settings</a></li>
                     </ul>
                 </div>

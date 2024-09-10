@@ -114,4 +114,28 @@ class Ads
         return $stmt->fetch(PDO::FETCH_ASSOC);
     }
 
+    public function search(string $searchPhrase, int|null $branch_id = null)
+    {
+        $searchPhrase = "%$searchPhrase%";
+        $query = "SELECT *, ads.id AS id, ads.address AS address, images.image_path AS image
+                  FROM ads
+                    JOIN branch ON branch.id = ads.branch_id
+                    LEFT JOIN images ON ads.id = images.ads_id
+                    where (title LIKE :searchPhrase 
+                    or description LIKE :searchPhrase)";
+        if($branch_id)
+        {
+            $query .= " and branch_id = :branch_id";
+            $stmt = $this->pdo->prepare($query);
+            $stmt->bindParam(':branch_id', $branch_id);
+        }else
+        {
+            $stmt = $this->pdo->prepare($query);
+        }
+        $stmt = $this->pdo->prepare($query);
+        $stmt->bindParam(':searchPhrase', $searchPhrase);
+        $stmt->execute();
+        return $stmt->fetchAll();
+    }
+
 }

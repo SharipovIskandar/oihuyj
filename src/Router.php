@@ -73,7 +73,7 @@ class Router
     {
         http_response_code($code);
         if ($code == 404) {
-            loadView('404');
+            loadView('404', loadFromPublic: false);
         }
 //        echo json_encode(['ok' => false, 'code' => $code, 'message' => $message]);
         exit();
