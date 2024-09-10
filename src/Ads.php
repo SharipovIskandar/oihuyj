@@ -114,28 +114,38 @@ class Ads
         return $stmt->fetch(PDO::FETCH_ASSOC);
     }
 
-    public function search(string $searchPhrase, int|null $branch_id = null)
+    public function search(string $searchPhrase, int|null $branch_id = null, int|null $minPrice = null, int|null $maxPrice = null)
     {
         $searchPhrase = "%$searchPhrase%";
         $query = "SELECT *, ads.id AS id, ads.address AS address, images.image_path AS image
-                  FROM ads
-                    JOIN branch ON branch.id = ads.branch_id
-                    LEFT JOIN images ON ads.id = images.ads_id
-                    where (title LIKE :searchPhrase 
-                    or description LIKE :searchPhrase)";
-        if($branch_id)
-        {
-            $query .= " and branch_id = :branch_id";
-            $stmt = $this->pdo->prepare($query);
-            $stmt->bindParam(':branch_id', $branch_id);
-        }else
-        {
-            $stmt = $this->pdo->prepare($query);
+              FROM ads
+                JOIN branch ON branch.id = ads.branch_id
+                LEFT JOIN images ON ads.id = images.ads_id
+                WHERE (title LIKE :searchPhrase 
+                OR description LIKE :searchPhrase)";
+
+        $params = [':searchPhrase' => $searchPhrase];
+
+        if ($branch_id) {
+            $query .= " AND (ads.branch_id = :branch_id)";
+            $params[':branch_id'] = $branch_id;
         }
+
+        if ($minPrice && $maxPrice) {
+            $query .= " AND (ads.price BETWEEN :min_price AND :max_price)";
+            $params[':min_price'] = $minPrice;
+            $params[':max_price'] = $maxPrice;
+        }
+
         $stmt = $this->pdo->prepare($query);
-        $stmt->bindParam(':searchPhrase', $searchPhrase);
+
+        foreach ($params as $key => $value) {
+            $stmt->bindParam($key, $value);
+        }
+
         $stmt->execute();
         return $stmt->fetchAll();
     }
+
 
 }

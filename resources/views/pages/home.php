@@ -40,7 +40,7 @@ loadPartials('navbar');
                                                 <label for="buy-properties" class="form-label font-medium text-slate-900 dark:text-white">Select Categories:</label>
                                                 <div class="filter-search-form relative filter-border mt-2">
                                                     <i class="uil uil-estate icons"></i>
-                                                    <select class="form-select z-2" data-trigger name="choices-catagory" id="choices-catagory-buy" aria-label="Default select example">
+                                                    <select class="form-select z-2" data-trigger name="branch_id" id="choices-catagory-buy" aria-label="Default select example">
                                                         <?php foreach ($branches as $branch): ?>
                                                         <option value="<?php echo $branch->id ?>" ><?php echo $branch->name ?></option>
                                                         <?php endforeach; ?>
@@ -48,41 +48,34 @@ loadPartials('navbar');
                                                 </div>
                                             </div>
 
-                                            <div>
-                                                <label for="buy-min-price" class="form-label font-medium text-slate-900 dark:text-white">Min Price :</label>
-                                                <div class="filter-search-form relative filter-border mt-2">
-                                                    <i class="uil uil-usd-circle icons"></i>
-                                                    <select class="form-select" data-trigger name="choices-min-price" id="choices-min-price-buy" aria-label="Default select example">
-                                                        <option>Min Price</option>
-                                                        <option>500</option>
-                                                        <option>1000</option>
-                                                        <option>2000</option>
-                                                        <option>3000</option>
-                                                        <option>4000</option>
-                                                        <option>5000</option>
-                                                        <option>6000</option>
-                                                    </select>
+                                                <!-- Min Price -->
+                                                <div>
+                                                    <label for="buy-min-price" class="form-label font-medium text-slate-900 dark:text-white">
+                                                        Min Price :
+                                                    </label>
+                                                    <div class="filter-search-form relative filter-border mt-2">
+                                                        <i class="uil uil-usd-circle icons"></i>
+                                                        <input type="number" name="min-price" id="buy-min-price"
+                                                               class="form-input filter-input-box bg-gray-50 dark:bg-slate-800 border-0"
+                                                               placeholder="Min Price">
+                                                    </div>
                                                 </div>
-                                            </div>
 
-                                            <div>
-                                                <label for="buy-max-price" class="form-label font-medium text-slate-900 dark:text-white">Max Price :</label>
-                                                <div class="filter-search-form relative mt-2">
-                                                    <i class="uil uil-usd-circle icons"></i>
-                                                    <select class="form-select" data-trigger name="choices-max-price" id="choices-max-price-buy" aria-label="Default select example">
-                                                        <option>Max Price</option>
-                                                        <option>500</option>
-                                                        <option>1000</option>
-                                                        <option>2000</option>
-                                                        <option>3000</option>
-                                                        <option>4000</option>
-                                                        <option>5000</option>
-                                                        <option>6000</option>
-                                                    </select>`
+                                                <div>
+                                                    <label for="buy-max-price" class="form-label font-medium text-slate-900 dark:text-white">
+                                                        Max Price :
+                                                    </label>
+                                                    <div class="filter-search-form relative filter-border mt-2">
+                                                        <i class="uil uil-usd-circle icons"></i>
+                                                        <input type="number" name="max-price" id="buy-max-price"
+                                                               class="form-input filter-input-box bg-gray-50 dark:bg-slate-800 border-0"
+                                                               placeholder="Max Price">
+                                                    </div>
                                                 </div>
-                                            </div>
 
-                                            <div class="lg:mt-6">
+
+
+                                                <div class="lg:mt-6">
                                                 <input type="submit" id="search-buy" name="search" class="btn bg-green-600 hover:bg-green-700 border-green-600 hover:border-green-700 text-white searchbtn submit-btn w-full !h-12 rounded" value="Search">
                                             </div>
                                         </div><!--end grid-->
@@ -104,7 +97,7 @@ loadPartials('navbar');
                                                 <label for="buy-properties" class="form-label font-medium text-slate-900 dark:text-white">Select Categories:</label>
                                                 <div class="filter-search-form relative filter-border mt-2">
                                                     <i class="uil uil-estate icons"></i>
-                                                    <select class="form-select z-2" data-trigger name="choices-catagory" id="choices-catagory-sell" aria-label="Default select example">
+                                                    <select class="form-select z-2" data-trigger name="branch_id" id="choices-catagory-sell" aria-label="Default select example">
                                                         <option>Houses</option>
                                                         <option>Apartment</option>
                                                         <option>Offices</option>
@@ -117,7 +110,7 @@ loadPartials('navbar');
                                                 <label for="buy-min-price" class="form-label font-medium text-slate-900 dark:text-white">Min Price :</label>
                                                 <div class="filter-search-form relative filter-border mt-2">
                                                     <i class="uil uil-usd-circle icons"></i>
-                                                    <select class="form-select" data-trigger name="choices-min-price" id="choices-min-price-sell" aria-label="Default select example">
+                                                    <select class="form-select" data-trigger name="min-price" id="choices-min-price-sell" aria-label="Default select example">
                                                         <option>Min Price</option>
                                                         <option>500</option>
                                                         <option>1000</option>
@@ -134,7 +127,7 @@ loadPartials('navbar');
                                                 <label for="buy-max-price" class="form-label font-medium text-slate-900 dark:text-white">Max Price :</label>
                                                 <div class="filter-search-form relative mt-2">
                                                     <i class="uil uil-usd-circle icons"></i>
-                                                    <select class="form-select" data-trigger name="choices-max-price" id="choices-max-price-sell" aria-label="Default select example">
+                                                    <select class="form-select" data-trigger name="max-price" id="choices-max-price-sell" aria-label="Default select example">
                                                         <option>Max Price</option>
                                                         <option>500</option>
                                                         <option>1000</option>
@@ -143,6 +136,7 @@ loadPartials('navbar');
                                                         <option>4000</option>
                                                         <option>5000</option>
                                                         <option>6000</option>
+
                                                     </select>
                                                 </div>
                                             </div>
@@ -182,7 +176,7 @@ loadPartials('navbar');
                                                 <label for="buy-min-price" class="form-label font-medium text-slate-900 dark:text-white">Min Price :</label>
                                                 <div class="filter-search-form relative filter-border mt-2">
                                                     <i class="uil uil-usd-circle icons"></i>
-                                                    <select class="form-select" data-trigger name="choices-min-price" id="choices-min-price-rent" aria-label="Default select example">
+                                                    <select class="form-select" data-trigger name="min-price" id="choices-min-price-rent" aria-label="Default select example">
                                                         <option>Min Price</option>
                                                         <option>500</option>
                                                         <option>1000</option>
@@ -199,15 +193,16 @@ loadPartials('navbar');
                                                 <label for="buy-max-price" class="form-label font-medium text-slate-900 dark:text-white">Max Price :</label>
                                                 <div class="filter-search-form relative mt-2">
                                                     <i class="uil uil-usd-circle icons"></i>
-                                                    <select class="form-select" data-trigger name="choices-max-price" id="choices-max-price-rent" aria-label="Default select example">
+                                                    <select class="form-select" data-trigger name="max-price" id="choices-max-price-rent" aria-label="Default select example">
                                                         <option>Max Price</option>
                                                         <option>500</option>
                                                         <option>1000</option>
                                                         <option>2000</option>
                                                         <option>3000</option>
                                                         <option>4000</option>
-                                                        <option>5000</option>
-                                                        <option>6000</option>
+                                                        <option>12000</option>
+                                                        <option>20000</option>
+                                                        <option>500000</option>
                                                     </select>
                                                 </div>
                                             </div>

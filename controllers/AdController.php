@@ -75,8 +75,12 @@ class AdController
     public function search()
     {
         $searchPhrase = $_REQUEST['search-phrase'];
-        $ads = (new \App\Ads())->search($searchPhrase);
+        $branch = $_REQUEST['branch_id'];
+        $minPrice = $_REQUEST['min-price'];
+        $maxPrice = $_REQUEST['max-price'] ?: PHP_INT_MAX;
+        $ads = (new \App\Ads())->search($searchPhrase, (int)$branch, (int)$minPrice, (int)$maxPrice);
         $branches = (new Branch())->getBranches();
+
         loadView('home', ['ads' => $ads, 'branches' => $branches], false);
     }
 }
